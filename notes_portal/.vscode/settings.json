@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "/home/theskd/miniconda3/envs/rahul_palak/bin/python"
+    "python.pythonPath": "/home/theskd/miniconda3/envs/rahul_palak/bin/python",
+    "cSpell.words": [
+        "amqp",
+        "gmail",
+        "raghoram",
+        "yagmail"
+    ]
 }
