@@ -77,7 +77,7 @@ def dashboard():
     if "state" in session:
         if session["state"] == "loggedIn":
             global user
-            return 'On Dashboard'
+            return render_template('dashboard.html')
         else:
             flash("!!! Unauthorized Access Denied !!!", "alert-warning")
             return redirect(url_for("home"))

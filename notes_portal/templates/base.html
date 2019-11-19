@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta content="Dashboard" name="description" />
+    <meta content="Notes Portal" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {% block css %}
+    {% endblock css %}
+    <!-- App Icons -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/morris/morris.css')}}">
+
+    <!-- App css -->
+    
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+<body>
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <div class="header-bg">
+        <!-- Navigation Bar-->
+        <header id="topnav">
+
+
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <!-- Logo-->
+                    <div class="d-none d-lg-block">
+                        <!-- Text Logo
+                            <a href="index.html" class="logo">
+                                Foxia
+                            </a>
+                             -->
+                        <!-- Image Logo -->
+                        <a href="{{ url_for('home') }}" class="logo" style="color: white;">
+                            Notes Portal
+                        </a>
+
+                    </div>
+                    <!-- End Logo-->
+                    <div id="navigation">
+
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+
+                            <li class="has-submenu">
+                                <a href="{{ url_for('home') }}"><i class="dripicons-meter"></i>Dashboard</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="index.html"><i class="dripicons-list"></i>Notes</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="{{ url_for('logout') }}"><i class="dripicons-lock"></i>Logout</a>
+                            </li>
+
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div> <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+    </div>
+
+
+    <div class="wrapper">
+        <div class="container-fluid">
+            {% block content %}
+            
+            {% endblock content %}
+        </div> <!-- end container-fluid -->
+    </div>
+    <!-- end wrapper -->
+
+
+
+
+    <!-- jQuery  -->
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/modernizr.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/waves.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.slimscroll.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='plugins/peity-chart/jquery.peity.min.js') }}"></script>
+
+    <!--Morris Chart-->
+    <script src="{{ url_for('static', filename='plugins/morris/morris.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/raphael/raphael-min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='assets/pages/dashboard.js') }}"></script>
+    {% block js %}
+    {% endblock js %}
+    <!-- App js -->
+    <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+
+</body>
+
+</html>
